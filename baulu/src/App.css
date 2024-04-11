@@ -276,3 +276,40 @@
   max-width: 100%;
   max-height: 100%;
 }
+
+
+.message-bubble-text {
+  background-color: #f8f9fa; /* Açık gri arka plan */
+  color: black; /* Siyah yazı rengi */
+  padding: 10px 10px; /* İçeriden boşluk */
+  border-radius: 20px; /* Yuvarlatılmış köşeler */
+  border-bottom-left-radius: 0; /* Sol alt köşe yuvarlaklığını kaldırır */
+  max-width: fit-content; /* İçerik kadar genişler */
+  word-wrap: break-word; /* Uzun kelimeleri satır sonunda böler */
+  position: relative; /* Pozisyonlandırma için gerekli */
+  display: block;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  padding:0px;
+}
+.message-bubble-image {
+  background-color: #f8f9fa; /* Açık gri arka plan */
+  color: black; /* Siyah yazı rengi */
+  padding: 10px 10px; /* İçeriden boşluk */
+  border-radius: 20px; /* Yuvarlatılmış köşeler */
+  border-bottom-left-radius: 0; /* Sol alt köşe yuvarlaklığını kaldırır */
+  max-width: fit-content; /* İçerik kadar genişler */
+  word-wrap: break-word; /* Uzun kelimeleri satır sonunda böler */
+  position: relative; /* Pozisyonlandırma için gerekli */
+  display: block;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  padding:0px;
+}
+
+.message-image{
+  height: 150px;
+  
+}
