@@ -1,0 +1,278 @@
+.chatbot-widget {
+  
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+    border-radius: 20px;
+    overflow: hidden; /* Yuvarlak köşeleri koruyarak içeriğin dışarı taşmasını önler */
+    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    position: fixed; /* Widget'ı sayfanın sağ alt köşesine sabitlemek için */
+    bottom: 20px; /* Alt kenardan 20px yukarıda */
+    right: 20px; /* Sağ kenardan 20px içeride */
+    z-index: 1000; /* Sayfadaki diğer öğelerin üzerinde görünmesini sağlar */
+    min-width: 350px;
+  
+}
+
+.chatbot-header {
+  background-color: rgb(255, 255, 255);
+  color: white;
+}
+
+
+.chatbot-header-top {
+  display: flex; 
+  align-items: center;  
+}
+
+.baulu-image {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.baulu-image img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+
+.chatbot-status {
+  font-size: 0.90em;
+  color: rgb(5, 100, 5);
+  font-weight: bold;
+ 
+}
+
+
+.header {
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 15px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden!important;
+
+}
+.header-and-status{
+  margin-right: 100px;
+}
+
+
+.send-button {
+  background-color: #007bff55;
+  border: none;
+  border-radius: 50%; /* Dairesel buton */
+  position: absolute; 
+  bottom: 15px;
+  right: 15px;
+  width: 24px; 
+  height: 24px;
+  cursor: pointer; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0; 
+}
+.close{
+  position: absolute;
+  right: 7px;
+  top: 13px;
+}
+.close-icon{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 28px;
+  color:#00000094;
+
+}
+.language-icon{
+    position: absolute;
+    top: 16px;
+    right: 62px;
+}
+.language {
+  background-color: transparent; 
+  border: none;
+  color: #00000094;
+  cursor: pointer; 
+  padding: 0px;
+  font-size: 22px;
+  margin-right: 5px;
+  display: flex;
+}
+
+/* buraya bakılacak */
+.chatbot-conversation{
+  padding-bottom: 10px;
+  min-height: 400px;
+  max-height: 400px; /* Maksimum yükseklik belirleyin */
+  overflow-y: auto; /* İçerik, belirlenen yüksekliği aştığında scrollbar görüntülenir */
+  overflow-x: hidden;
+  background-color: rgb(234,238,243);
+
+}
+.chatbot-input-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; /* Gönder butonunu pozisyonlandırmak için */
+  padding: 10px;
+}
+.user-input-box {
+  flex-grow: 1;
+  margin: 0px;
+  border-radius: 20px; /* Yuvarlak kenarlar */
+  border: 1px solid #ccc; /* Kenarlık */
+  padding: 8px 40px 8px 10px; /* İç boşluk */
+}
+
+.chatbot-input {
+  border: none;
+  border-top: 2px solid #ddd; /* Üst kenar çizgisi */
+  padding: 10px;
+  background-color: #ccc;
+}
+
+/* Gönder butonu */
+.chatbot-send {
+  width: 24px; /* Küçültülmüş ikon genişliği */
+  height: 24px; /* Küçültülmüş ikon yüksekliği */
+  border: none;
+  background: none;
+  position: absolute; /* Mesaj kutusuna göre pozisyonlandır */
+  right: 10px;
+  bottom: 10px;
+  cursor: pointer;
+}
+
+.userInput{
+  
+    background-color: #007bff; /* Mavi arka plan */
+    color: white; /* Beyaz yazı rengi */
+    padding: 10px; /* İçeriden boşluk */
+    border-radius: 20px; /* Yuvarlatılmış köşeler */
+    max-width: 80%; /* Balonun maksimum genişliği */
+    word-wrap: break-word; /* Uzun kelimeleri satır sonunda böler */
+    float: right; /* Sağa hizalama */
+    clear: both; /* Üst ve altındaki öğelerle çakışmayı önler */
+    margin: 5px 0; /* Üst ve altına boşluk */
+    position: relative; /* Pozisyonlandırma için gerekli */
+  
+}
+.message-bubble {
+  background-color: #007bff; /* Mavi arka plan */
+  color: white; /* Beyaz yazı rengi */
+  padding: 10px 20px; /* İçeriden boşluk */
+  border-radius: 20px; /* Yuvarlatılmış köşeler */
+  border-bottom-right-radius: 0; /* Sağ alt köşe yuvarlaklığını kaldırır */
+  max-width: fit-content; /* İçerik kadar genişler */
+  word-wrap: break-word; /* Uzun kelimeleri satır sonunda böler */
+  position: relative; /* Pozisyonlandırma için gerekli */
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-right:20px;
+  margin-left: auto;
+}
+/* Her mesaj gönderildikten sonra float temizliği */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.user-input-container {
+  width: 100%;
+  padding: 0 10px; /* Sağdan ve soldan boşluk */
+}
+.message-bubble-bot {
+  background-color: #f8f9fa; /* Açık gri arka plan */
+  color: black; /* Siyah yazı rengi */
+  padding: 10px 10px; /* İçeriden boşluk */
+  border-radius: 20px; /* Yuvarlatılmış köşeler */
+  border-bottom-left-radius: 0; /* Sol alt köşe yuvarlaklığını kaldırır */
+  max-width: fit-content; /* İçerik kadar genişler */
+  word-wrap: break-word; /* Uzun kelimeleri satır sonunda böler */
+  position: relative; /* Pozisyonlandırma için gerekli */
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  
+  margin-right: 10px;
+}
+
+
+.language-options {
+  display: flex; /* Dil seçeneklerini yan yana hizalar */
+  position: absolute;
+  top: 100%; /* İkonun hemen altında */
+  left: 50%; /* Merkezleme için */
+  transform: translateX(-50%); /* Tam olarak altında ortalanması için */
+  background-color: rgba(255, 255, 255, 0.9); /* Hafif şeffaf arka plan */
+  border-radius: 5px;
+  padding: 5px 0; /* Dikey padding */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Gölgelendirme */
+}
+
+.language-option {
+  background-color: transparent;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 0.75rem; /* Yazı tipi boyutunu küçült */
+}
+
+.language-option:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.selected-language{
+  font-size: 13px;
+  font-weight: bold;
+  align-items: center;
+  display: flex;
+  padding-right: 3px;
+  color: rgba(0, 0, 0, 0.253)
+}
+.message-bubble-bot{
+  margin-left: 2px;
+  margin-right: 20px;
+ 
+}
+
+@keyframes swing {
+  0%, 100% {
+    transform: rotate(-15deg);
+    box-shadow: 0 5px 15px rgba(0, 0, 255, 0.5); 
+  }
+  50% {
+    transform: rotate(15deg);
+    box-shadow: 0 5px 15px rgba(0, 0, 255, 0.5); 
+  }
+}
+
+.chatbot-closed-icon {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 75px;
+  height: 75px;
+  cursor: pointer;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: swing 2s infinite ease-in-out;
+}
+
+.chatbot-closed-icon img {
+  max-width: 100%;
+  max-height: 100%;
+}
